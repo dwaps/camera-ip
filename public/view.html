@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Visionnage du flux vidéo</title>
+  </head>
+  <body>
+    <h2>Visionnage du flux vidéo</h2>
+    <video id="videoViewer" autoplay playsinline muted></video>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="webrtc.js"></script>
+    <script>
+      setupWebRTC(false); // `false` indique que ce n'est pas l'appelant (visionneur)
+    </script>
+  </body>
+</html>

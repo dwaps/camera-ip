@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Capture du flux vidéo</title>
+  </head>
+  <body>
+    <h2>Capture du flux vidéo</h2>
+    <video id="videoElement" autoplay playsinline muted></video>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="webrtc.js"></script>
+    <script>
+      setupWebRTC(true); // `true` indique que c'est l'appelant (capture)
+    </script>
+  </body>
+</html>
