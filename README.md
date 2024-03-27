@@ -5,7 +5,7 @@ Minimalist application to monitor my children.
 ## Docker
 
 ```bash
-    docker run dwaps/camera-ip
+    docker run -dp 9432:9432 dwaps/camera-ip
 ```
 
 ## npx
