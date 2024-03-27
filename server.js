@@ -1,3 +1,7 @@
+#!/usr/bin/env node
+
+require("gentls");
+
 const express = require("express");
 const https = require("https");
 const socketIo = require("socket.io");

@@ -3,8 +3,9 @@
   "version": "1.0.1",
   "description": "Minimalist application to monitor my children.",
   "main": "server.js",
+  "bin": "server.js",
   "scripts": {
-    "start": "gentls && node server.js"
+    "start": "node server.js"
   },
   "keywords": [
     "dwaps",
