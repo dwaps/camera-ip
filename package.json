@@ -1,18 +1,35 @@
 {
   "name": "camera-ip",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "1.0.1",
+  "description": "Minimalist application to monitor my children.",
+  "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "gentls": "npx gentls"
+    "start": "gentls && node server.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "dwaps",
+    "michael",
+    "cornillon",
+    "camera",
+    "webcam",
+    "ip",
+    "camera ip"
+  ],
+  "author": {
+    "url": "https://dwaps.fr",
+    "name": "Michael CORNILLON",
+    "email": "ei.dwaps@gmail.com"
+  },
+  "homepage": "https://github.com/dwaps/camera-ip",
+  "repository": {
+    "url": "https://github.com/dwaps/camera-ip",
+    "type": "git"
+  },
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.18.3",
+    "gentls": "^2.0.3",
     "socket.io": "^4.7.4"
   }
 }

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+
+
+
+<!-- viewbox et preserveAspectRatio indispensables pour IE < Microsoft Edge -->
+<svg id="anim" viewBox="0 0 500 500" preserveAspectRatio="xMinYMin meet" width="500px" height="500px" xml:lang="fr"
+	xmlns="http://www.w3.org/2000/svg"
+	xmlns:link="http://www.w3.org/1999/xlink">
+				
+	<title>Logo DWAPS</title>
+	<desc>Logo DWAPS</desc>
+	
+	<style>
+		@-webkit-keyframes cligner {
+			3% { rx: 15; }
+			4% { rx: 0; }
+			5% { rx: 15; }
+			
+			50% { rx: 15; }
+			51% { rx: 0; }
+			52% { rx: 15; }
+			56% { rx: 15; }
+			57% { rx: 0; }
+			58% { rx: 15; }			
+			
+			88% { rx: 15; }
+			89% { rx: 0; }
+			90% { rx: 15; }
+		}
+
+		@keyframes cligner {
+			3% { rx: 15; }
+			4% { rx: 0; }
+			5% { rx: 15; }
+			
+			50% { rx: 15; }
+			51% { rx: 0; }
+			52% { rx: 15; }
+			56% { rx: 15; }
+			57% { rx: 0; }
+			58% { rx: 15; }			
+			
+			88% { rx: 15; }
+			89% { rx: 0; }
+			90% { rx: 15; }
+		}
+		
+		.cligner {
+			-webkit-animation: cligner 10000ms infinite;
+			animation: cligner 10000ms infinite;
+		}
+	</style>
+	
+	
+	<defs>
+		<filter id="ombre-portee" x="-10" y="-10" width="150" height="40">
+			<feOffset in="SourceAlpha" dx="3" dy="3" result="offset3"/>
+			<feGaussianBlur in="offset3" stdDeviation="3" result="blur3" />
+		</filter>
+				
+		<linearGradient id="vert-android" x1="0%" y1="100%" x2="0%" y2="0%">
+			<stop offset="0%" style="stop-color:#003300; stop-opacity:1"/>
+			<stop offset="25%" style="stop-color:#006600; stop-opacity:1"/>
+			<stop offset="50%" style="stop-color:#009900; stop-opacity:1"/>
+			<stop offset="75%" style="stop-color:#00CC00; stop-opacity:1"/>
+			<stop offset="100%" style="stop-color:#DDFFDD; stop-opacity:1"/>
+		</linearGradient>
+		<linearGradient id="vert-android-antenne-droite" x1="0%" y1="100%" x2="0%" y2="0%">
+			<stop offset="0%" style="stop-color:#009900; stop-opacity:1"/>
+			<stop offset="50%" style="stop-color:#00AA00; stop-opacity:1"/>
+			<stop offset="100%" style="stop-color:#00DD00; stop-opacity:1"/>
+		</linearGradient>
+		<linearGradient id="vert-android-antenne-gauche" x1="100%" y1="0%" x2="0%" y2="0%">
+			<stop offset="0%" style="stop-color:#006600; stop-opacity:1"/>
+			<stop offset="50%" style="stop-color:#008800; stop-opacity:1"/>
+			<stop offset="100%" style="stop-color:#00AA00; stop-opacity:1"/>
+		</linearGradient>
+		<linearGradient id="rouge" x1="0%" y1="100%" x2="0%" y2="0%">
+			<stop offset="0%" style="stop-color:#330000; stop-opacity:1"/>
+			<stop offset="25%" style="stop-color:#660000; stop-opacity:1"/>
+			<stop offset="50%" style="stop-color:#990000; stop-opacity:1"/>
+			<stop offset="75%" style="stop-color:#CC0000; stop-opacity:1"/>
+			<stop offset="100%" style="stop-color:#FFDDDD; stop-opacity:1"/>
+		</linearGradient>
+	</defs>
+	
+	<g id="logo">
+	
+		<!-- TETE ANDROID -->
+			<!-- corps -->
+			<g id="corps">
+				<!-- ombre du corps et des antennes -->
+					<path d="M246,400 A40,40 0 0,1 246,100" style="filter:url(#ombre-portee)"/>
+					<line x1="60" y1="105" x2="128" y2="158" style="stroke:black; stroke-width:10px; filter:url(#ombre-portee)"/>
+					<line x1="60" y1="395" x2="128" y2="342" style="stroke:black; stroke-width:10px; filter:url(#ombre-portee)"/>
+				
+				<path d="M246,400 A40,40 0 0,1 246,100" style="fill:url(#vert-android); stroke:#00FF00; stroke-width:0.2px;"/>
+				
+			<!-- Antennes -->
+				<g id="antennes">
+					<!-- droite -->
+						<line x1="60" y1="105" x2="128" y2="158" style="stroke:url(#vert-android-antenne-droite); stroke-width:10px"/>
+							<!-- Repères -->
+								<!--
+								<line x1="131" y1="159" x2="200" y2="159" stroke="purple" stroke-width="10px"/>
+								<line x1="63" y1="96" x2="200" y2="96" stroke="purple" stroke-width="10px"/>
+								-->
+					<!-- gauche -->
+						<line x1="60" y1="395" x2="128" y2="342" style="stroke:url(#vert-android-antenne-gauche); stroke-width:10px"/>
+							<!-- Repères -->
+								<!--
+								<line x1="131" y1="341" x2="200" y2="341" stroke="purple" stroke-width="10px"/>
+								<line x1="63" y1="404" x2="200" y2="404" stroke="purple" stroke-width="10px"/>
+								-->
+				</g>
+				
+			<!-- Yeux -->
+				<g id="yeux">
+					<!-- droit (haut) -->	
+						<ellipse class="cligner" cx="170" cy="200" rx="15" ry="10" fill="black">
+							<!-- <animate attributeName="rx" attributeType="XML" from="15" to="0" dur="100ms" begin="3s" restart="1s" repeatCount="indefinite"/> -->
+						</ellipse>
+					<!-- gauche (bas) -->
+						<ellipse class="cligner" cx="170" cy="300" rx="15" ry="10" fill="black" />
+				</g>
+			</g>
+				
+	
+		<!-- PARTIE DROITE -->
+		<path d="M254,100 A40,40 0 0,1 254,400" style="filter:url(#ombre-portee)"/>
+		<path d="M254,100 A40,40 0 0,1 254,400" style="fill:url(#rouge); stroke:#FF0000; stroke-width:0.2px"/>
+	</g>
+
+    <!-- <script xlink:href="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.4.4/vivus.min.js"></script>
+    <script>
+        <![CDATA[
+        new Vivus('anim', {
+            type: 'oneByOne',
+            start: 'autostart',
+            duration: 130,
+        })
+        ]]>
+    </script> -->
+</svg>

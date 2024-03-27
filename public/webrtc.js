@@ -1,4 +1,3 @@
-// Connexion avec le serveur de signalisation via Socket.IO
 const socket = io();
 
 let peerConnection;
@@ -6,7 +5,6 @@ const config = {
   iceServers: [{ urls: "stun:stun.l.google.com:19302" }],
 };
 
-// Fonction pour démarrer ou rejoindre une session WebRTC
 function setupWebRTC(isCaller) {
   peerConnection = new RTCPeerConnection(config);
 

@@ -1,0 +1,17 @@
+version: "3"
+services:
+  camera-ip:
+    build:
+      context: .
+      args:
+        - PORT=9432
+    ports:
+      - "9432:9432"
+    environment:
+      - PORT=9432
+    volumes:
+      - type: bind
+        source: .
+        target: /app
+      - type: volume
+        target: /app/node_modules
