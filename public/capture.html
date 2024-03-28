@@ -11,7 +11,15 @@
     <script src="/socket.io/socket.io.js"></script>
     <script src="webrtc.js"></script>
     <script>
-      setupWebRTC(true); // `true` indique que c'est l'appelant (capture)
+      setupWebRTC(true);
+      const id = setTimeout(() => {
+        location.reload();
+      }, 60000 * 30);
+      addEventListener("beforeunload", (e) => {
+        e.preventDefault();
+        e.returnValue = "";
+        clearTimeout(id);
+      });
     </script>
   </body>
 </html>
