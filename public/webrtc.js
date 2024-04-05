@@ -1,5 +1,11 @@
 const socket = io();
 
+function requestReloadWindow() {
+  socket.emit("reload");
+}
+
+socket.on("reload", () => location.reload());
+
 let peerConnection;
 const config = {
   iceServers: [{ urls: "stun:stun.l.google.com:19302" }],
@@ -8,7 +14,6 @@ const config = {
 function setupWebRTC(isCaller) {
   peerConnection = new RTCPeerConnection(config);
 
-  // Ajouter des candidats ICE au peer connection dès qu'ils sont disponibles
   peerConnection.onicecandidate = (event) => {
     if (event.candidate) {
       socket.emit("message", {
@@ -18,14 +23,12 @@ function setupWebRTC(isCaller) {
     }
   };
 
-  // Pour le visionneur, définir la vidéo reçue comme source de l'élément vidéo
   if (!isCaller) {
     peerConnection.ontrack = (event) => {
       document.getElementById("videoViewer").srcObject = event.streams[0];
     };
   }
 
-  // Gérer les candidats ICE entrants
   socket.on("message", (message) => {
     switch (message.type) {
       case "offer":
@@ -64,7 +67,6 @@ function setupWebRTC(isCaller) {
 function handleOffer(offer, isCaller) {
   if (!isCaller) {
     peerConnection.setRemoteDescription(new RTCSessionDescription(offer));
-    // Créer une réponse à l'offre
     peerConnection
       .createAnswer()
       .then((answer) => {

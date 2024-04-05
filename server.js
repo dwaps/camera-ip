@@ -23,6 +23,9 @@ const io = socketIo(server);
 app.use(express.static("public"));
 
 io.on("connection", (socket) => {
+  socket.on("reload", () => {
+    socket.broadcast.emit("reload");
+  });
   socket.on("message", (data) => {
     socket.broadcast.emit("message", data);
   });
