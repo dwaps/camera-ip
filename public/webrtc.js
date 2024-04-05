@@ -46,8 +46,8 @@ function setupWebRTC(isCaller) {
 
   if (isCaller) {
     navigator.mediaDevices
-      .getUserMedia({ video: true, audio: true })
-      .then((stream) => {
+      ?.getUserMedia({ video: true, audio: true })
+      ?.then((stream) => {
         document.getElementById("videoElement").srcObject = stream;
         stream
           .getTracks()
@@ -57,7 +57,7 @@ function setupWebRTC(isCaller) {
           socket.emit("message", { type: "offer", offer: offer });
         });
       })
-      .catch((error) => console.error("Media error: ", error));
+      ?.catch((error) => console.error("Media error: ", error));
   }
 }
 
