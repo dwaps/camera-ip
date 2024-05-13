@@ -2,15 +2,59 @@
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="./favicon.svg" />
     <title>Visionnage du flux vidéo</title>
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+        font-family: sans-serif;
+        user-select: none;
+      }
+      video {
+        width: 100vw;
+        height: 100vh;
+        background: #000;
+        object-fit: contain;
+      }
+      .controls {
+        position: absolute;
+        top: 40px;
+        right: 40px;
+        z-index: 99999999999;
+      }
+      .controls > * {
+        cursor: pointer;
+        border: none;
+        border-radius: 4px;
+        width: 90px;
+        height: 120px;
+        background-color: #d7ffd8;
+        color: black;
+        text-decoration: none;
+        padding: 20px;
+        font-weight: bold;
+      }
+      .controls > a:active {
+        background-color: red;
+        color: white;
+      }
+    </style>
   </head>
   <body>
-    <h2>Visionnage du flux vidéo</h2>
-    <h4><a href="./capture.html">Pour la capture, c'est par ici</a></h4>
-    <video id="videoViewer" autoplay playsinline muted controls></video>
-
-    <button onclick="requestReloadWindow()">RELAUNCH CAPTURE</button>
+    <div class="controls">
+      <a href="./capture.html">Capture</a>
+      <a onclick="requestReloadWindow(event)">Recharger</a>
+    </div>
+    <video
+      onload="openFullscreen"
+      id="videoViewer"
+      autoplay
+      playsinline
+      muted
+      controls
+    ></video>
 
     <script src="/socket.io/socket.io.js"></script>
     <script src="webrtc.js"></script>

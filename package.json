@@ -1,6 +1,6 @@
 {
   "name": "camera-ip",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Minimalist application to monitor my children.",
   "main": "server.js",
   "bin": "server.js",
